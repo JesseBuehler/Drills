@@ -1,0 +1,66 @@
+<script>
+  // ----------------------------------
+  // Return all instance of 'dog' ONLY after 'cat' is found.
+
+  function allInstances(array, key){
+    // console.log(array)
+    // console.log('----key is: '+ key)
+    newArray = []
+    // keyFound = false
+    catIsFoundFlag = false
+    for(i=0;i<array.length;i++){
+      // console.log(array[i])
+      if(array[i] == 'cat'){
+        // console.log('===cat found===')
+        catIsFoundFlag = true
+      }
+      if(catIsFoundFlag == true && array[i] == key){
+        newArray.push(array[i])
+      }
+    }
+    return newArray
+  }
+
+  x = allInstances(['dog', 'dog', 'cat', 'banana', 'dog'], 'dog')  // returns ['dog']
+  console.log(x)
+  x = allInstances(['cat', 'dog', 'dog', 'rat', 'dog'], 'dog')  // returns ['dog', 'dog', 'dog']
+  console.log(x)
+
+
+
+  // ----------------------------------
+  // Return ALL instances of Dog if cat is found
+
+  function allInstances2(array, strToMatch){
+    // console.log(array)
+    // console.log(strToMatch)
+    stringFound = false
+    catIsPresent = false
+    newArray = []
+    FinalArray = []
+    for(i=0;i<array.length;i++){
+      // console.log(array[i])
+      if(array[i] == strToMatch){
+        newArray.push(array[i])
+      }
+      if(array[i] == 'cat'){
+        catIsPresent = true
+      }
+    }
+    if(catIsPresent == true){
+      return newArray
+    }
+
+    return []
+  }
+
+  //
+  x = allInstances2(['dog', 'dog', 'cat', 'dog'], 'dog')
+  console.log(x)// returns ['dog', 'dog', 'dog']
+  x = allInstances2(['cat', 'dog', 'dog', 'dog'], 'dog')
+  console.log(x)  // returns ['dog', 'dog', 'dog']
+  x = allInstances2(['dog', 'dog', 'dog'], 'dog')
+  console.log(x)  // returns []
+
+
+</script>

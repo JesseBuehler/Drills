@@ -1,0 +1,17 @@
+<script>
+
+function mySubString(string, num1, num2){
+  newString = ''
+  for(i=0;i<string.length;i++){
+    if(i > num1  && i < num2){
+      newString = newString + string[i]
+    }
+  }
+  return newString
+}
+
+
+result = mySubString("I love bananas", 2, 6) // returns 'ove '
+console.log(result)
+
+</script>

@@ -1,0 +1,77 @@
+<script>
+
+// -- Simple Flag --------------------------------------------------
+// REturn true if both var1 and var2 are found in the array
+
+// function detected(array, var1, var2){
+  // console.log(array)
+  // console.log(var1)
+//   var var1Found = false
+//   var var2Found = false
+//   for(i=0;i<array.length;i++){
+//     // console.log(array[i])
+//     if(array[i] == var1){
+//       // console.log('var1 found')
+//       var1Found = true
+//     }
+//     if(array[i] == var2){
+//       // console.log('var2 found')
+//       var2Found = true
+//     }
+//   }
+//   if(var1Found == true && var2Found == true){
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+// //
+// x = detected([3,4,2,7,6], 16, 6) // should return true
+// console.log("result ---")
+// console.log(x)
+
+// -- FLAG ---------------------------------------------------------
+// Replace all words that come after the key with "---"
+
+function replaceWithHyphen(array, key){
+  var newArray = []
+  keyFound = false
+  for(i=0;i<array.length;i++){
+    console.log(array[i])
+    if(keyFound){
+      newArray.push('---')
+    } else {
+      newArray.push(array[i])
+    }
+    if(array[i] == key){
+      console.log('keymatch')
+      keyFound = true
+    }
+
+  }
+  return newArray
+}
+
+arr_parent = ['dog', 'cat', 'banana', 'mouse', 'house', 'loas']
+result = replaceWithHyphen(arr_parent, 'banana')
+console.log(result)
+// should return ['dog', 'cat', 'banana', '---', '---', '---']
+
+// -- Common functions ---------------------------------------------------------
+
+// http://www.w3schools.com/jsref/jsref_obj_string.asp
+// console.log("hello".endsWith('llo'))
+// console.log("hello mr banana".includes('mr'))
+// console.log("hello mr banana".indexOf('mr'))
+// console.log("hello mr banana mr penn is here".lastIndexOf('mr'))
+// console.log("hello mr banana mr penn is here".replace('mr', 'miss'))
+// console.log("hello mr banana mr penn is here".split(' '))
+// console.log("hello mr banana mr penn is here".split('h'))
+// console.log("I LIKE YELLING A LOT!!! MEOW!!!!".toLowerCase())
+// console.log("You are a turkey!!!".toUpperCase())
+// console.log("*" + "                You are a turkey!!!                            ".trim() + "*")
+// console.log(new Date())
+// //http://www.w3schools.com/jsref/jsref_obj_date.asp
+// console.log(new Date().getMonth())
+
+</script>

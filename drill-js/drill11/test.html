@@ -1,0 +1,48 @@
+<script>
+  // ------------------------------------------------
+  // Add all the elements after you find "hello"
+
+  function afterHello(array, trigger){
+    var newArray = []
+    trigFound = false
+    for(i=0;i<array.length;i++){
+      if(trigFound == true){
+        newArray.push(array[i])
+      }
+      if(array[i] == trigger){
+        trigFound = true
+      }
+    }
+    return newArray
+  }
+
+  // console.log('--------------After Hello---------------------------')
+  x = afterHello(['hey', 'dog', 'hello', 'meow', 'jerry'], 'hello')
+  console.log(x)// ['meow', 'jerry']
+
+  x = afterHello(['dog', 'hello'], 'hello')
+  console.log(x)
+  // console.log('----------------------------------------------------')
+  // []
+
+  // -------------------------------------------------
+  // take a string and return ONLY the words after "name: but before last_name:"
+  // functions you'll need indexOf() and substring()
+
+// function getFirstName(string){
+//   start = string.search(': ')
+//   string1 = string.substring(start + 2, string.length)
+//   end = string.search('last_name')
+//   string2 = string.substring(start + 1, end).trim()
+//   return string2
+// }
+//
+//
+//   x = getFirstName("Toms first name: John last_name: Markson")
+//   console.log('First name pulled from String: ' + x)
+//   // "John"
+//   x = getFirstName("Toms first name: JohnBananaFace last_name: MrBananaHead asdfasdfasdfasdf")
+//   console.log('First name pulled from String: ' + x)
+  // // JohnBananaFace
+
+</script>

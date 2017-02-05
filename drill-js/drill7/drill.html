@@ -1,0 +1,98 @@
+
+<script>
+// Count all matches in the array. If the item appears 5 times it should return 5.
+
+
+// function countMatches (array, string){
+//   // console.log(array)
+//   // console.log(string)
+//   var count = 0
+//   for(i=0; i<array.length; i++){
+//     // console.log(array[i])
+//     if(array[i] == string){
+//       // console.log('match')
+//       count = count + 1
+//     }
+//   }
+//   return count
+// }
+//
+//
+//
+// console.log(countMatches(['dog', 'cow', 'dog', 'dog',	 'pet'], 'dog'))
+// console.log('-----------')
+// console.log(countMatches(['dog', 'cow', 'dog', 'dog',	 'pet'], 'cow'))
+
+
+//-------------------------------------------------------------------------
+// Write a trim function that removes leading and trailing
+// whitespaces.
+//
+// function trimStr(string){
+//   var newString = ''
+//   var foundChar = false
+//   var finalString = ''
+//   for(i=0;i<string.length;i++){
+//     nonBlankSpaceFound = (string[i] != ' ')
+//     if(nonBlankSpaceFound){
+//       foundChar = true
+//     }
+//     if(foundChar){
+//       newString = newString + string[i]
+//     }
+//   }
+//   var foundChar = false
+//   for(j = newString.length -1; j >=0 ; j--){
+//     console.log(newString[j])
+//     nonBlankSpaceFound = (newString[j] != ' ')
+//     if(nonBlankSpaceFound){
+//       foundChar = true
+//     }
+//     if(foundChar){
+//       finalString = newString[j] + finalString
+//     }
+//   }
+//   return finalString
+// }
+//
+// // result = trimStr("    Banana     ")  // Returns "Banana"
+// // console.log('---------------------results-------------------')
+// // console.log(result)
+// result = trimStr(" I love bananas ") // Returns "I love bananas"
+// console.log('---------------------results-------------------')
+// console.log("*" + result + "*")
+
+
+//------------------------------------------------------------
+
+function mySubString(string, num1, num2){
+  newString = ''
+  for(i=0;i<string.length;i++){
+    if(i > num1  && i < num2){
+      newString = newString + string[i]
+    }
+  }
+  return newString
+}
+
+
+result = mySubString("I love bananas", 2, 6) // returns 'ove '
+console.log(result)
+
+// var str = "Hello world!";
+// var res = str.substr(1, 4);
+//
+// console.log(res)
+// The result of res will be:
+//
+// ello
+
+
+
+
+
+
+
+
+
+</script>

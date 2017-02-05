@@ -1,0 +1,195 @@
+<style>
+
+	body {
+		font-family: sans-serif;
+		background-color: silver;
+	}
+
+	.row {
+		float:left;
+    min-height: 100px;
+		width:45%;
+		border:5px solid gray;
+		margin:10px;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: gray;
+	}
+
+	h3 {
+		color: white;
+	}
+
+	.container {
+		margin:auto;
+		width: 1000px;
+	}
+
+	input {
+		font-size: 12px;
+		padding: 10px;
+		background: #f2f2f2;
+		margin-right: 10px;
+	  float: left;
+		border-radius: 8px;
+		border-style: none;
+	}
+
+	.myList{
+		float:left;
+	}
+
+	.xbox {
+		padding: 10px;
+    background-color: silver;
+    width: 50px;
+    color: black;
+    border-radius: 8px;
+    margin-left: 5px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #e67373;
+		width: 70px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+	}
+
+  .submitMath {
+		background-color: #e67373;
+		width: 200px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 16px;
+    margin-top: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+  }
+
+  .numberInput{
+    padding: 10px;
+		width: 204px;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+  }
+
+	ul{
+		padding:0px;
+	}
+
+	li {
+
+		list-style-type: none;
+		text-align: left;
+	}
+
+	.area {
+	  margin: 40px;
+		float:left;
+		width: 80%
+	}
+
+	h2 {
+	  color: #000000;
+	}
+
+  .imageLink{
+    max-width:150px;
+    float:right;
+    margin:20px;
+  }
+
+</style>
+
+<div class='container'>
+  <div class='row'>
+    <h3 id='headline'>How are things going?</h3>
+    <h4 class='headline-2'>Let's change this text</h4>
+    <div class='submitMath banana'>Change Text</div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='add_link_1'>A link should go in here</div>
+    <div class='add_link_2'>Put a Link here</div>
+    <div class ='submitMath add_link'>add a link</div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <input type='text' class='data'><br><br>
+    <div class='submitMath clearBox'>Clear Box</div>
+    <div class='submitMath findDog'>Find 'dog' in box contents</div>
+    <div class='submitMath setNewValue'>Set new value</div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='submitMath add_button'>Add</div>
+  </div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+
+<script>
+
+  //Select elemnts on page.
+
+  function runBanana() {
+    $('#headline').text("You are a banana face")
+    $('.headline-2').text("You are a banana face")
+  }
+  $('.banana').click(runBanana)
+
+  function addLinks(){
+    $('.add_link_1').text("<a href='http://www.cnn.com'>CNN BABY</a>")
+    $('.add_link_2').html("<br><br><a href='http://www.cnn.com'>Dog Face</a>")//See the difference between .text and .html?
+  }
+  $('.add_link').click(addLinks)
+
+  //--------------------------------------------
+
+  function clear_the_box(){
+    $('.data').val('')
+  }
+
+  function find_dog() {
+    value = $('.data').val()
+    if(value.search('dog') >= 0) {
+      alert("DOG FOUND")
+    }
+  }
+
+  function set_new_value(){
+    $(".data").val("This is completely new string")
+  }
+
+  $('.clearBox').click(clear_the_box)
+  $('.findDog').click(find_dog)
+  $('.setNewValue').click(set_new_value)
+
+  function changeAdd(){
+    $('.add_button').text('Divide')
+  }
+
+  $('.add_button').click(changeAdd)
+
+</script>

@@ -1,0 +1,73 @@
+<script>
+  // Create a fuction that take an array. And returns all but the first
+  // and last elements.
+
+//   function removeFirstAndLast(array){
+//     // console.log(array)
+//     var newArray = []
+//     for(i=0;i<array.length;i++){
+//       // console.log(array[i])
+//       console.log(i) // (i) will just give you the index of the array not the contents.
+//       if(i != 0 && i != array.length - 1){
+//         newArray.push(array[i])
+//       }
+//     }
+//     return newArray
+//   }
+//
+//   parent_arry = ['dog', 'cat', 'banana']
+//   result = removeFirstAndLast(parent_arry) //['cat']
+//   console.log(result)
+//   result = removeFirstAndLast([1,2,3,4,5,6,7]) // [2,3,4,5,6]
+//   console.log(result)
+
+// ---------------------------------------------
+// Write a function that ONLY returns elements before you find
+// keyword
+//
+// function getBefore(array, trigger) {
+//   var newArray = []
+//   var finalArray = []
+//   var foundTrigger = false;
+//   for(i=0;i<array.length;i++){
+//     if(foundTrigger || array[i] == trigger) {
+//     } else {
+//       newArray.push(array[i])
+//     }
+//     if(array[i] == trigger){
+//       foundTrigger = true
+//     }
+//   }
+//   console.log(newArray)
+//   for(j=0;j<newArray.length;j++){
+//     console.log(newArray[j])
+//     if(newArray[j] != trigger){
+//       finalArray.push(newArray[j])
+//     }
+//   }
+//   return finalArray
+// }
+//
+// x = getBefore(['tree','car','banana','cat','trunk','face'],'cat')
+// console.log(x)
+
+//----------------------------------------------
+// Return an array that returns only the first 3 elements and only the ones that start with B
+
+function firstThree(array){
+  var newArray = []
+  for(i=0;i<array.length;i++){
+    if(array[i][0] == 'b' && i < 3){
+      newArray.push(array[i])
+    }
+  }
+  return newArray
+}
+
+
+x = firstThree([4,3, 'banana', 'boat',2,3])
+console.log(x) // ['banana']
+x = firstThree(['base', 'ball', 3, 3, 2, 1])
+console.log(x)// ['base', 'ball']
+
+</script>

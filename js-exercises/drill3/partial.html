@@ -1,0 +1,163 @@
+<style>
+
+	body {
+		font-family: sans-serif;
+		background-color: silver;
+	}
+
+	.row {
+		float:left;
+    min-height: 100px;
+		width:45%;
+		border:5px solid gray;
+		margin:10px;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: gray;
+	}
+
+	h3 {
+		color: white;
+	}
+
+	.container {
+		margin:auto;
+		width: 1000px;
+	}
+
+	input {
+		font-size: 12px;
+		padding: 10px;
+		background: #f2f2f2;
+		margin-right: 10px;
+	  float: left;
+		border-radius: 8px;
+		border-style: none;
+	}
+
+	.myList{
+		float:left;
+	}
+
+	.xbox {
+		padding: 10px;
+    background-color: #e67373;
+    width: 50px;
+    color: #FF9800;
+    border-radius: 8px;
+    margin-left: 10px;
+    float: left;
+    text-align: center;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #e67373;
+		width: 70px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+	}
+
+  .submitMath {
+		background-color: #e67373;
+		width: 200px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 16px;
+    margin-top: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+  }
+
+  .numberInput{
+    padding: 10px;
+		width: 204px;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+  }
+
+	ul{
+		padding:0px;
+	}
+
+	li {
+
+		list-style-type: none;
+		text-align: left;
+	}
+
+	.area {
+	  margin: 40px;
+		float:left;
+		width: 80%
+	}
+
+	h2 {
+	  color: #000000;
+	}
+
+  .imageLink{
+    max-width:150px;
+    float:right;
+    margin:20px;
+  }
+
+</style>
+<div class='container'>
+
+  <div class='row'>
+    <input type="text" class='input'>
+    <div class='submit'>Submit</div>
+    <div class='items'></div>
+  </div>
+
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script>
+
+
+
+///---------------- afternoon 2 ----------------------------
+// Create an input box that takes in input and creates a div (tag looking) that
+// allows users to create new tags. Then if they click X they delete them.
+// Clears the box. See //  console.log($(event.target).remove())
+
+function newTags(){
+  x = $('.input').val()
+  tag = "<div class ='xbox'>" + x + "</div>"
+  $('.items').append(tag)
+}
+
+function xBoxClick(event) {
+  // alert('here')
+$(event.target).remove()
+}
+
+$('.submit').click(newTags)
+
+// $('.xbox').click(xBoxClick)
+$(document).on('click', '.xbox', xBoxClick)
+
+// console.log($(event.target).remove())
+
+//------------------Afternoon 3 ----------------------------
+// Create a input box for full name, age, zipcode. Also create a submit button.
+// When the user hits submit. Check to see that the users full name is longer than 10 characters
+// but shorter than 30. If it fails then alert the user that there is an issue.
+// Check that the age > 13 and less than 100. Show a similar message otherwise.
+// Check the zipcode is exactly 5 numbers long.
+
+</script>

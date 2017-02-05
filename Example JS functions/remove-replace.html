@@ -1,0 +1,95 @@
+<script>
+  // Take an array. Remove all items that start with the letter that gets passed in.
+
+  // function removeItem(str, arr){
+  //   var newArr = []
+  //   // console.log(str)
+  //   // console.log(arr)
+  //   for(i=0; i<arr.length; i++){
+  //     // console.log(arr[i][0])
+  //     if(arr[i][0] != str){
+  //       // console.log('got here')
+  //       newArr.push(arr[i])
+  //     }
+  //   }
+  //   return newArr;
+  // }
+
+  // result = removeItem('d', ["cat", "dog", "kangaroo"])
+  // console.log(result)
+  // result = removeItem('k', ["cat", "dog", "kangaroo"])
+  // console.log(result)
+
+
+  // ----------------------------------------------------
+
+
+  // Take an array of 0's and 1's. Replace all ones with "dog". so [0, 1] should be [0, 'dog']
+
+  // function replaceZero(input, replacement){
+  //   var outputArray = []
+  //   for(i=0;i<input.length;i++){
+  //     if(input[i] == 1 ){
+  //       outputArray.push(replacement)
+  //     } else {
+  //       outputArray.push(input[i])
+  //     }
+  //   } 
+  //   return outputArray
+  // }
+
+  // result = replaceZero([0,1,0,0,0,0,1,1,1,0,1], 'dog')
+  // console.log('------------Final Result---------------')
+  // console.log(result)
+
+
+  // // --------------------------------------------
+
+
+
+  // // String replace characters in string. %3A should be :. %2F = /
+
+  // function strReplace(str){
+  //   while(str.search('%3A') > -1 || str.search('%2F') > -1){
+  //     str = str.replace('%3A', ':')
+  //     str = str.replace('%2F', '/')
+  //   }
+  //   return str;
+  // }
+
+  // url_parent = "http%3A%2F%2Fwww.cnn.com%2F"
+  // result = strReplace(url_parent) // Should be http://www.cnn.com
+  // console.log('-------------final Result ------------')
+  // console.log(result)
+
+  // result = strReplace("http%3A%2F%2Fwww.cnn.com%2Fbanana") // Should be http://www.cnn.com/banana
+  // console.log(result)
+
+  //--------------------------------------------------
+  // Create a function that takes and array of strings 
+  // and returns all the strings without a profanity word.
+
+//   function profanityFilter(profanity,arr){
+//     var newArr = []
+//     for(i=0;i<arr.length;i++){
+//       var x = arr[i].search(profanity)
+//       if(x == -1){
+//         newArr.push(arr[i])
+//       }
+//     }
+//   return newArr;
+// }
+
+//   var array1 = [
+//     "I love bananas",
+//     "dogs taste like cheeseburgers",
+//     "I want to marry a banana"
+//   ]
+
+//   var prof = 'banana'
+
+//   result = profanityFilter(prof, array1)
+//   console.log(result)
+
+
+</script>

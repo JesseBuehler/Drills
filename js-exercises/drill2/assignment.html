@@ -1,0 +1,271 @@
+<style>
+
+	body {
+		font-family: sans-serif;
+		background-color: silver;
+	}
+
+	.row {
+		float:left;
+		width:45%;
+		border:5px solid gray;
+		margin:10px;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: gray;
+	}
+
+	h3 {
+		color: white;
+	}
+
+	.container {
+		margin:auto;
+		width: 1000px;
+	}
+
+	input {
+		font-size: 12px;
+		padding: 10px;
+		background: #f2f2f2;
+		margin-right: 10px;
+	  float: left;
+		border-radius: 8px;
+		border-style: none;
+	}
+
+	.myList{
+		float:left;
+		width 40%;
+		background-color: #52a0ac;
+		border-radius: 8px;
+		padding: 0px;
+		margin-left: 20px;
+	}
+
+	.xbox {
+		padding: 10px;
+    background-color: #e67373;
+    width: 170px;
+    color: #FF9800;
+    border-radius: 8px;
+    margin-left: 50px;
+    float: left;
+    text-align: center;
+    height: 100;
+    margin-top: 10px;
+    font-size: -webkit-xxx-large;
+    font: -webkit-mini-control;
+    font-size: 82px;
+    margin-right: 50;
+    margin-bottom: 50px;
+	}
+
+	.xbox:hover{
+		background-color: #FF9800;
+		color: #e67373
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #e67373;
+		width: 70px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+	}
+
+	ul{
+		padding:0px;
+	}
+
+	li {
+	  padding: 10px;
+		list-style-type: none;
+		margin:10px;
+		text-align: left;
+		color: white;
+		background-color: silver;
+		border-radius: 8px;
+	}
+
+	.area {
+	  margin: 40px;
+		float:left;
+		width: 80%
+	}
+
+	h2 {
+	  color: #000000;
+	}
+
+</style>
+<div class='container'>
+	<div class='row'>
+      <ul class='myList'></ul>
+			<h3 style ='text-align:center;'>Click X</h3>
+			<div class='xbox'>X</div>
+	</div>
+
+			<!-- <div style='clear:both'></div> -->
+
+		<div class='row'>
+			<h3>Age Pass</h3>
+			<input class='age-checker' type='text' placeholder='first'>
+			<div class='submit age-submit'>Submit</div>
+
+		</div>
+
+		<!-- <div style='clear:both'></div> -->
+
+		<div class='row'>
+			<h3>Greetings</h3>
+			<input class='firstName' type='text' placeholder='first'>
+			<input class='lastName' type='text' placeholder='second'>
+			<div class='submit name'>Submit</div>
+		</div>
+
+		<div style='clear:both'></div>
+
+		<div class='row'>
+			<h3>Website	</h3>
+			<input class='website' type='url' placeholder='http://'>
+			<div class='submit add-website'>Submit</div>
+		</div>
+
+		<!-- <div style='clear:both'></div> -->
+
+		<div class='row'>
+			<h3>Headline</h3>
+			<input type="text" class='headline'>
+	    <div class='submit add-headline'>Submit</div>
+		</div>
+
+		<div class='row'>
+			<h3>Add Image</h3>
+			<input type='url' class='image'placeholder="http://">
+			<div class='submit add-image'>Submit</div>
+		</div>
+
+		<!-- <div class='row'>
+			<table class='Table'>
+	      <tr>
+	        <th>Name</th>
+	        <th>Job Title</th>
+	      </tr>
+		</div> -->
+
+
+	</div>
+
+  <div class='area'>
+  </div>
+
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script>
+//-----------------------------------------
+
+// 1
+// Create a list with the following items:  *DONE*
+
+function drawList(){
+	var myList = ['dog', 'cat', "banana", "cheeseburger"];
+	$('.myList').html('')
+	for(i=0;i<myList.length;i++){
+		name = myList[i]
+		row = '<ul><li>' + name + '</lu><ul>'
+		$('.myList').append(row)
+	}
+}
+drawList()
+
+
+// 2  *DONE*
+// Take input from a user in an input box. Let them enter their age.
+// If their age is over 30 say "You are an old man"
+// otherwise have it say "You are good to go". This should appear
+// as an alertbox.
+
+$('.age-submit').click(function() {
+	var age = parseInt($('.age-checker').val())
+	if(age <= 30) {
+		alert("You are good to go")
+	} else {
+		alert("You are an old man")
+	}
+})
+
+// 3 *DONE*
+// Take input from a user and get their first and last name as separate
+// inputs. Then alert with thier full name when they hit a submit button.
+
+function nameCombiner(){
+	$('.name').click(function() {
+		var x = ($('.firstName').val()) + " " + ($('.lastName').val())
+		alert("Hello " + x)
+	})
+}
+$('.name').click(nameCombiner)
+
+// 4 *DONE*
+// Take input from a user. Create a headline to match. THen delete
+// The input box so they can change it.
+
+function handleHeadline() {
+	$('.area').append("<h2>" + $('.headline').val() + "</h2>")
+  $('.headline').val('');
+}
+$('.add-headline').click(handleHeadline)
+
+// 5  *DONE*
+// create a box with an X. If the user hits the X, delete the box!!!!!
+// The whole box goes away (jquery look up hide and delete/remove)
+
+$('.xbox').click(function(){
+	$('.xbox').remove()
+})
+
+// 6 Take input from a user with an image url. Then when they hit submit.
+// It adds the actual image to the page. *DONE*
+
+function addImage() {
+	$('.area').append("<img src='" + $('.image').val() + "'>")
+	console.log()
+  $('.image').val('');
+}
+"<img src='"
+$('.add-image').click(addImage)
+
+
+
+// 7 Take input from a user and create a link from it. So if they addButton
+// http://www.cnn.com add a link to there. (input in a box and a link appears)
+//*DONE*
+
+function addWebpage() {
+	$('.area').append("<a href='" + $('.website').val() + "'>" + $('.website').val() + "</a>")
+  $('.website').val('');
+}
+
+$('.add-website').click(addWebpage)
+
+// 8 Take a hash and build a table.
+//
+// var people = [
+// 	{name: 'Fat Tony', job: "Mobster"},
+// 	{name: 'Matt Stopa', job: "Code Monkey"},
+// 	{name: 'Mr Peanut', job: "Marketing Rep"}
+// ]
+// function drawTable(){
+// 	$('.Table').html('')
+// 	for(i=0;i<people.length;i++){
+// 		name = data[i]['name']
+// 		job = data[i]['job']
+
+
+</script>

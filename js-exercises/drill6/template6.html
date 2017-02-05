@@ -1,0 +1,58 @@
+
+
+
+<div class='display'>
+  <h2>HEY!</h2>
+  <div class='desc_parent'>
+    <p class='description'>This is some text</p>
+  </div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script>
+
+// $('.description').parent().parent()
+// $('.display').children()
+// x = $('.display').children().find('p')
+// $(x).text("I am changing the description")
+// $(x).parent()
+// $('.display').children().find('p').parent().html("BOOM")
+
+function handle_click(event) {
+  console.log(event)
+  console.log(event.target)
+  $('h2').text("I CHANGED THE HEADLINE!!!!!")
+}
+
+$('.description').click(handle_click)
+
+
+Player = function() {
+  var points = 10;
+  return {
+   addPoints: function(x) {
+     points = points + x;
+     return points
+   },
+   subtractPoints: function(x) {
+     points = points - x
+     return points
+   },
+   getPoints: function(x) {
+     return points;
+   }
+ }
+}
+
+mario = new Player()
+console.log(mario.addPoints(20))
+console.log(mario.subtractPoints(10))
+console.log(mario.addPoints(390))
+console.log(mario.addPoints(20))
+console.log(mario.subtractPoints(20))
+console.log(mario.addPoints(20))
+console.log(mario.getPoints())
+
+
+
+</script>

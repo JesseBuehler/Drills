@@ -1,0 +1,75 @@
+<style>
+
+	body {
+		font-family: Georgia;
+	}
+
+	.row {
+		clear: both;
+
+	}
+
+	.container {
+		margin:auto;
+		width: 800px;
+	}
+
+	input {
+		font-size: 20px;
+		padding: 20px;
+		background: #f2f2f2;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #DCAAAA;
+		width: 100px;
+		color: white;
+		display: inline;
+		border-radius: 8px;
+		margin-left: 24px;
+	}
+</style>
+<div class='container'>
+	<div class='row'>
+		<h3>Greeting Checker</h3>
+		<input class='name' type='text' placeholder='name'>
+		<input class='age' type='text' placeholder='age'>
+		<div class='submit greeting'>Submit</div>
+	</div>
+	<div class='row'>
+		<h3>Multiply Numbers</h3>
+		<input class='left-value' type='text' palceholder='first'>
+		<input class='right-value' type='text' palceholder='second'>
+		<div class='submit multiply'>Submit</div>
+	</div>
+	<div class='row'>
+		<h3>Age Checker</h3>
+		<input class='age-checker' type='text' placeholder='first'>
+		<div class='submit age-submit'>Submit</div>
+	</div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<script>
+
+	$('.greeting').click(function() {
+		alert("Hi " + $('.name').val() + "! Your age is " + $( '.age').val() )
+	})
+
+	$('.multiply').click(function() {
+		var x = parseInt($('.left-value').val()) * parseInt($('.right-value').val())
+		alert("Your value is " + x)
+		})
+
+	$('.age-submit').click(function() {
+		var age = parseInt($('.age-checker').val())
+		if(age < 18) {
+			alert("You are too young")
+		} else {
+			alert("You are old enough")
+		}
+	})
+
+</script>

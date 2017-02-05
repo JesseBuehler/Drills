@@ -1,0 +1,79 @@
+<script>
+
+// write 2 functions
+//  one function takes an array. It removes all of the elements of the array with 'dog' in it
+//  another function reverses the array.
+//  Start with an array and then call both things on it
+
+// function reverse(array){
+//   var newArray = []
+//   for(i = array.length -1; i >=0 ; i--){
+//     newArray.push(array[i])
+//   }
+//   return newArray
+// }
+//
+// function removeDog(array){
+//   var noDog = []
+//     for(j=0;j<array.length;j++){
+//       if(array[j] != 'dog'){
+//         noDog.push(array[j])
+//       }
+//   }
+//   return noDog
+// }
+//
+//
+// arr = ['dog', 'cat', 'mouse']
+// console.log('original array: ' + arr)
+// arr2 = reverse(arr)
+// console.log('reversed array: ' + arr2)
+// arr3 = removeDog(arr2)
+// console.log('Array without dog: ' + arr3)
+// //should give ['mouse', 'cat']
+
+//-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-
+
+// Create a function called `isValid` which returns false if a string is equal to ‘dog'
+
+// Then create an array that uses that `isValid` method on each element of an array to make sure it’s valid and removes it if not.
+
+function isValid(string){
+  if(string == 'pidgeon' || string == 'dog' || string[0] == 'm'){
+    return false
+  }
+  return true
+}
+
+function removeInvalidItems(secondArray){
+  var output = []
+  for(i=0;i<secondArray.length;i++){
+    if(isValid(secondArray[i])){
+      output.push(secondArray[i])
+    }
+  }
+  return output
+}
+
+result =  removeInvalidItems(['cat', 'dog','rat', 'mouse', 'pidgeon', 'car', 'mongoose', 'giraffe'])
+console.log(result)
+
+
+// remove dog pigeon or letter words that start with the letter m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

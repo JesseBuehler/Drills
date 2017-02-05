@@ -1,0 +1,170 @@
+<style>
+
+	body {
+		font-family: sans-serif;
+		background-color: silver;
+	}
+
+	.row {
+		float:left;
+    min-height: 130px;
+		width:45%;
+		border:5px solid gray;
+		margin:10px;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: gray;
+	}
+
+	h3 {
+		color: white;
+	}
+
+	.container {
+		margin:auto;
+		width: 1000px;
+	}
+
+	input {
+		font-size: 12px;
+		padding: 10px;
+		background: #f2f2f2;
+		margin-right: 10px;
+	  float: left;
+		border-radius: 8px;
+		border-style: none;
+		margin-bottom: 5px;
+	}
+
+	.myList{
+		float:left;
+	}
+
+	.xbox {
+		padding: 10px;
+    background-color: silver;
+    /*width: 50px;*/
+    color: black;
+    border-radius: 5px;
+    margin-left: 5px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #e67373;
+		width: 70px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+	}
+
+  .submitMath {
+		background-color: #e67373;
+		width: 200px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 16px;
+    margin-top: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+  }
+
+  .numberInput{
+    padding: 10px;
+		width: 204px;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+  }
+
+	ul{
+		padding:0px;
+	}
+
+	li {
+
+		list-style-type: none;
+		text-align: left;
+	}
+
+	.area {
+	  margin: 40px;
+		float:left;
+		width: 80%
+	}
+
+	h2 {
+	  color: #000000;
+	}
+
+  .imageLink{
+    max-width:150px;
+    float:right;
+    margin:20px;
+  }
+
+</style>
+
+<div class='container'>
+
+  <div class='row'>
+		<h3>Search Names</h3>
+    <input type = 'text' class='searchName' placeholder="NAME">
+    <ul class='searchList'></ul>
+    <div class='submit search'>Search</div>
+  </div>
+
+	<div class='row'>
+		<h3>Create Boxes</h3>
+    <input type = 'text' class='createBox' placeholder="NAME">
+		<div class='results'></div>
+  </div>
+
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script>
+
+
+//----------------- afternoon 1--------------------------
+// Take a list but don't do anythin with it. Have an input box.
+// If someone enters a letter and they hit submit, then show
+// matching items in the list.
+
+//
+// function nameSearch(searchInput){
+// 	$('.searchList').html('')
+// 	input = ['Tony', 'Mark', 'Tim', 'Jesse', 'Amber']
+// 	for(i=0;i<input.length;i++){
+// 		console.log("Array names: " + input[i])
+// 		if(input[i].search(searchInput) == 0){
+// 			$('.searchList').append(input[i])
+// 		}
+// 	}
+// }
+//
+// $('.search').click(function(){
+// 	nameSearch($('.searchName').val())
+// })
+
+//--------------------------------------------------
+// Create boxes based off of an input box
+
+$('.createBox').keyup(function(event) {
+	if(event.keyCode == 13) {
+		$('.results').append("<div class='xbox'>" + $('.createBox').val() + "</div>")
+	}
+})
+
+</script>

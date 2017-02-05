@@ -1,0 +1,79 @@
+<div class='display'>
+  <h2>HEY</h2>
+  <div class='desc_parent'>
+    <p class ='description'>This is some text</p>
+  <div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<script>
+
+function handle_click(event) {
+  console.log(event)
+  console.log(event.target)
+  $('h2').text("I changed the headline")
+}
+
+$(".description").click(handle_click)
+
+Player = function(){
+  var points = 10;
+  var health = 100;
+  var specialPower = null;
+  return {
+    addPoints: function(x) {
+      points = points + x;
+      return points
+    },
+    subtractPoints: function(x) {
+      points = points - x
+      return points
+    },
+    getPoints: function(x) {
+      return points;
+    },
+    getHealth: function() {
+      return health
+    },
+    getSpecialPower: function(){
+      return specialPower;
+    },
+    consumePowerup: function(powerup){
+      specialPower = powerup.getPower()
+      health = health + powerup.getValue()
+    }
+  }
+}
+
+Powerup = function(power_up_value, special_power) {
+  var value = power_up_value;
+  var power = special_power
+  return {
+    getValue: function(){
+      return value;
+    },
+    getPower: function() {
+      return power
+    }
+  }
+}
+
+mario = new Player()
+powerup_1 = new Powerup(20, "racoonhat")
+powerup_2 = new Powerup(100, "wingsuit")
+mario.consumePowerup(powerup_1)
+mario.consumePowerup(powerup_2)
+console.log(mario.getHealth())
+console.log(mario.getSpecialPower())
+
+
+
+
+
+
+
+
+
+
+</script>

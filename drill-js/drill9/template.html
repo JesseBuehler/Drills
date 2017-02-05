@@ -1,0 +1,32 @@
+<script>
+
+
+  // Go through the hash and based off the age change their status.
+  // If they are over 30, they are invalid.
+
+  function validateAges(input){
+    for(i=0;i<input.length;i++){
+      if(input[i]['age'] > 30){
+        input[i]['status'] = "invalid"
+      }
+    }
+    return input
+  }
+
+  var people = [
+    { name: "matt", age: 28, status: "valid" },
+    { name: "mr burns", age: 80, status: "valid" },
+    { name: "homer", age: 35, status: "valid" }
+  ]
+
+  results = validateAges(people)
+  console.log('-----------final output----------------')
+  console.log(results)
+
+  // results should be : people = [
+  //   { name: "matt", age: 28, status: "valid" },
+  //   { name: "mr burns", age: 80, status: "invalid" },
+  //   { name: "homer", age: 35, status: "invalid" }
+  // ]
+
+</script>

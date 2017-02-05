@@ -1,0 +1,33 @@
+<script>
+
+  // Remove all the elements in the string that look like the array.
+  // Put them in an actual array.
+
+  function stringToArray(string){
+    string1 = string.indexOf("[")
+    string2 = string.substring(string1, string.length)
+    string3 = string.indexOf("]")
+    string4 = string.substring(string1 + 1, string3)
+    array = string4.split(" ")
+    var finalArray = []
+    for(i=0;i<array.length;i++){
+      var removeCommas = array[i].replace(",", "")
+      var removeQuotes = removeCommas.replace("'", "")
+      var removeQuote2 = removeQuotes.replace("'", "")
+      finalArray.push(removeQuote2)
+    }
+    return finalArray
+  }
+
+  var parent_string = "function(['toaster', 'cow', 'banana', 'rat']) { Monkey Boy } "
+
+  x = stringToArray(parent_string) // returns ['toaster', 'cow', 'banana', 'rat']
+  console.log('------------------- Final Result')
+  console.log(x)
+  // ----------------------------------------------------------------
+  var parent_string = "function(['toaster', '80s-movie']) { Monkey Boy } "
+  x = stringToArray(parent_string) // returns ['toaster', '80s-movie']
+  console.log(x)
+
+
+</script>

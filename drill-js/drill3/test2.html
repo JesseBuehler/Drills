@@ -1,0 +1,54 @@
+<script>
+	// ----------------------------------------
+  // Return the first element in the array
+	arr = [33, 31, 84, 58]
+	// console.log(arr[0])
+
+  // ----------------------------------------
+  // Return the last element in the array
+  arr = [33, 31, 84, 58]
+	// console.log(arr[arr.length - 1])
+
+// ----------------------------------------
+	// Return all the array elements that are greater than 10 into a new array.
+	var arr1 = [1, 5,11, 44, 59]
+	var newArr = []
+
+	for(i = 0; i < arr1.length; i++) {
+		if(arr1[i] > 10) {
+			newArr.push(arr1[i])
+		}
+	}
+	// console.log(newArr)
+
+	// ----------------------------------------
+	// Return all the array elements that are greater than 100 into a new array.
+	var arr2 = [1, 5,11, 44, 59, 222, 1, 444, 44, 22, 155, 300, 331333332]
+	var newArr = []
+
+	for(i = 0; i < arr2.length; i++) {
+		if(arr2[i] > 100) {
+			newArr.push(arr2[i])
+		}
+	}
+	// console.log(newArr)
+
+	// ----------------------------------------
+  // Return all the array elements that are greater than 100 into one array
+  // and return all those less than 100 into another
+  var arr2 = [1, 5,11, 44, 59, 222, 1, 444, 44, 22, 155, 300, 331333332]
+	var over100 = []
+	var under100 = []
+
+	for(i = 0; i < arr2.length; i++) {
+		if(arr2[i] > 100) {
+			over100.push(arr2[i])
+		} else {
+			under100.push(arr2[i])
+		}
+	}
+	// console.log(over100)
+	// console.log(under100)
+
+
+	</script>

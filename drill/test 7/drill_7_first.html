@@ -1,0 +1,83 @@
+<style>
+
+	body {
+		font-family: Georgia;
+	}
+
+	.row {
+		clear: both;
+
+	}
+
+	.container {
+		margin:auto;
+		width: 800px;
+	}
+
+	input {
+		font-size: 20px;
+		padding: 20px;
+		background: #f2f2f2;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #dcaaaa;
+		width: 100px;
+		color: white;
+		display: inline;
+		border-radius: 8px;
+		margin-left: 24px;
+	}
+</style>
+<div class='container'>
+	<div class='row'>
+		<h3>Loop</h3>
+		<input class='name' type='text' placeholder='name'>
+		<div class='submit loop'>Submit</div>
+		<div class='loop_results'></div>
+	</div>
+	<div class='row'>
+		<h3>Password</h3>
+		<input class='pass' type='text' placeholder="first">
+		<div class='submit password'>Submit</div>
+	</div>
+	<div class='row'>
+		<h3>Prime Number</h3>
+		<input class='prime' type='text' placeholder='first'>
+		<div class='submit prime-number'>Submit</div>
+		<div class='prime-result'></div>
+	</div>
+</div>
+
+<script type='text/javascript' src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script>
+
+	$('.loop').click(function() {
+		name = $('.name').val()
+		for(i = 0; i < 5; i++){
+			$('.loop_results').append('<h2>' + name + '</h2>')
+		}
+	})
+
+	$('.password').click(function() {
+		names = ['matt', 'tony', 'alex']
+		for(i = 0; i < names.length; i++) {
+			if(names[i] == $('.pass').val()) {
+				alert("You are granted access")
+			}
+		}
+	})
+
+	$('.prime-number').click( function() {
+		primes = [1,3,5,7,9,11,13,17]
+		for(j = 0; j < primes.length; j++) {
+			num = parseInt($('.prime').val())
+			if(primes[j] == num) {
+				$('.prime-result').html('<h1>' + num + "</h1>" )
+			}
+		}
+	})
+
+</script>

@@ -1,0 +1,25 @@
+<script>
+
+// Write a function that takes an array and returns a hash of each item in the the array and a count for how many times it appears.
+
+// Drill this.
+
+function countEach(array){
+  // console.log(array)
+  hash = {}
+  for(i=0;i<array.length;i++){
+    // console.log(array[i])
+    // console.log(hash[array[i]])
+    if(hash[array[i]] == undefined){
+      hash[array[i]] = 1
+    } else {
+      hash[array[i]] = hash[array[i]] + 1
+    }
+  }
+  return hash
+}
+
+
+result = countEach(["dog", "dog", "giraffe", "mongoose", "giraffe", "cat", "pony", "dog", "cat"]) // returns  { "dog": 2, "cat": 2, "pony": 1}
+console.log(result)
+</script>

@@ -1,0 +1,64 @@
+<script src='jquery.js'></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lalezar", rel="stylesheet">
+
+
+<style>
+	body {
+		font-family: 'Lalezar', cursive;
+	}
+	.container {
+		width: 500px;
+		margin: auto;
+	}
+
+	.menu {
+		margin: auto;
+		width: 550px;
+	}
+
+	.menu li {
+		list-style-type: none;
+		padding: 30px;
+		background-color: #5e6e9a;
+		display: inline;
+		color: #fff;
+		padding-bottom: 8px;
+	}
+
+	.image {
+		max-width: 300px;
+	}
+
+	.byline {
+		color: #000FFF;
+	}
+</style>
+
+<ul class='menu'>
+</ul>
+
+<div class='container'>
+	<h2 class='top'></h2>
+	<div class='image-holder'></div>
+	<p class='text'></p>
+	<h5 class='byline'></h5>
+</div>
+
+
+<script>
+	$.get('/json/article.json', function(data) {
+		$('.top').text(data['headline'])
+		$('.image-holder').html("<img class='image' src='" + data['image'] + "'>")
+		$('.text').text(data['body'])
+		$('.byline').text(data['byline'])
+		console.log(data)
+	})
+
+	$.get('/json/menu.json', function(data) {
+		var items = data['items']
+		for(i = 0; i < items.length; i++) {
+			$('.menu').append("<li>" + items[i] + "</li>")
+		}
+	})
+</script>

@@ -1,0 +1,19 @@
+function stringToArray(string){
+  string1 = string.indexOf("[")
+  string2 = string.substring(string1, string.length)
+  string3 = string.indexOf("]")
+  string4 = string.substring(string1 + 1, string3)
+  array = string4.split(" ")
+  var finalArray = []
+  for(i=0;i<array.length;i++){
+    finalArray = array[i].replace(',', '')
+    console.log(array[i])
+  }
+  return finalArray
+}
+
+var parent_string = "function(['toaster', 'cow', 'banana', 'rat']) { Monkey Boy } "
+
+x = stringToArray(parent_string) // returns ['toaster', 'cow', 'banana', 'rat']
+console.log('------------------- Final Result')
+console.log(x)

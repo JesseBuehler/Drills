@@ -1,0 +1,61 @@
+<script>
+  // ------------------------------------------------------------
+  // Make me a function that will replace bad words, in an array of
+  // strings but if the REALLY bad words are found, it removes the string.
+  // Replace the bad words with '****'
+
+  function removeSentances(sentances, veryBadArray) {
+    var newArray = []
+    for(i=0;i<sentances.length;i++){
+      found = false
+      for(j=0;j<veryBadArray.length;j++){
+        var x = sentances[i].search(veryBadArray[j])
+        if(x > 0){
+          found = true
+        }
+      }
+      if(found == false) {
+        newArray.push(sentances[i])
+      }
+    }
+    return newArray;
+  }
+
+  function bleepBadWords(sentances, bad) {
+    var final_array = []
+    for(k=0;k<sentances.length;k++){
+      temp_str = sentances[k]
+      for(l=0;l<bad.length;l++){
+        temp_str = temp_str.replace(bad[l], '****')
+      }
+      final_array.push(temp_str)
+    }
+    return final_array;
+  }
+
+  function removeBadWords(bad, very_bad, sentances){
+    var filteredSentances = removeSentances(sentances, very_bad)
+    return bleepBadWords(filteredSentances, bad)
+  }
+
+  var bad_parent = ['meow', 'ruff', 'moo']
+  var very_bad_parent = ['cheeseburger', 'banana']
+  var sentances_parent = [
+    'There was a cat that liked to meow',
+    'That cat would meow and ruff',
+    'She was a terrible cheeseburger',
+    'Every was better in the future',
+    'Totally banana'
+  ]
+
+  result = removeBadWords(bad_parent, very_bad_parent, sentances_parent)
+  console.log("-------- Final result ---------")
+  console.log(result)
+  // Result should be
+  // [
+  //   'There was a cat that liked to ****',
+  //   'That cat would **** and ****',
+  //   'Every was better in the future',
+  // ]
+
+</script>

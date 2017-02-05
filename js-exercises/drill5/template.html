@@ -1,0 +1,227 @@
+<style>
+
+	body {
+		font-family: sans-serif;
+		background-color: silver;
+	}
+
+	.row {
+		float:left;
+    min-height: 130px;
+		width:45%;
+		border:5px solid gray;
+		margin:10px;
+		padding: 10px;
+		border-radius: 20px;
+		background-color: gray;
+	}
+
+	h3 {
+		color: white;
+	}
+
+	.container {
+		margin:auto;
+		width: 1000px;
+	}
+
+	input {
+		font-size: 12px;
+		padding: 10px;
+		background: #f2f2f2;
+		margin-right: 10px;
+	  float: left;
+		border-radius: 8px;
+		border-style: none;
+		margin-bottom: 5px;
+	}
+
+	.myList{
+		float:left;
+	}
+
+	.xbox {
+		padding: 10px;
+    background-color: silver;
+    /*width: 50px;*/
+    color: black;
+    border-radius: 5px;
+    margin-left: 5px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+	}
+
+	.submit {
+		padding: 10px;
+		background-color: #e67373;
+		width: 70px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+	}
+
+  .submitMath {
+		background-color: #e67373;
+		width: 200px;
+		color: white;
+		border-radius: 8px;
+		margin-left: 16px;
+    margin-top: 10px;
+	  float: left;
+		text-align: center;
+		text-decoration: blink;
+  }
+
+  .numberInput{
+    padding: 10px;
+		width: 204px;
+		border-radius: 8px;
+		margin-left: 10px;
+	  float: left;
+		text-align: center;
+  }
+
+	ul{
+		padding:0px;
+	}
+
+	li {
+
+		list-style-type: none;
+		text-align: left;
+	}
+
+	.area {
+	  margin: 40px;
+		float:left;
+		width: 80%
+	}
+
+	h2 {
+	  color: #000000;
+	}
+
+  .imageLink{
+    max-width:150px;
+    float:right;
+    margin:20px;
+  }
+
+</style>
+
+<div class='container'>
+	<div class='row'>
+    <h3>Multiply Numbers</h3>
+		<input class='left-value numberInput' type='text' placeholder='first'>
+		<input class='right-value numberInput' type='text' placeholder='second'>
+    <div class='submitMath add'>+</div>
+		<div class='submitMath multiply'>x</div>
+	</div>
+
+	<div class='row'>
+		<h3>Append an Array</h3>
+		<input class='appArray' type='text'>
+		<div class='submit appArr'>Submit</div>
+		<div class='AppendedArray'></div>
+	</div>
+
+	<div class='row'>
+		<h3>Delete List</h3>
+		<div class='DeleteArray'></div>
+	</div>
+
+	<div class='row'>
+		<h3>Table from a Hash</h3>
+		<table class='hashTable'>
+			<tr>
+				<th>Name</th>
+				<th>Weight</th>
+			</tr>
+	</div>
+
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<script>
+
+// --------------------------------
+// // Create a list based on an array. Allow the user to delete those items
+// // from the list. // You will need function (event) { event.target }
+
+// Create a list based on an array. Allow the user to delete those items
+// from the list. // You will need function (event) { event.target }
+
+arr = ['cat', 'dog', 'banana']
+
+function loadInitialValues(array) {
+	for(i=0;i<array.length;i++){
+		$('.deleteArray').append("<li class='items'>" + array[i] + "</li>")
+	}
+}
+
+loadInitialValues(arr)
+
+$('.items').click(RemoveItems)
+
+function RemoveItems(event){
+	// console.log(event)
+	$(event.target).remove()
+}
+
+// -------------------------------
+// Create a table based on this hash.
+// hash = [{name: "Tony", weight: 200}, {name: "Mark", weight: 600},{name: "Banana", weight: 2} ]
+
+function createTable(){
+	$('.hashTable').html('')
+	hash = [{name: "Tony", weight: 200}, {name: "Mark", weight: 600},{name: "Banana", weight: 2} ]
+	// console.log(hash)
+	for(i=0;i<hash.length;i++){
+		// console.log(hash[i])
+		name = hash[i]['name']
+		weight = hash[i]['weight']
+		// console.log(name)
+		// console.log(weight)
+		row = "<tr><td>" + name + "</td><td>" + weight + "</td></tr>"
+		$('.hashTable').append(row)
+	}
+}
+
+createTable()
+// --------------------------------
+// Create a list based on an array. Allow the user to input stuff into it.
+// This takes an input box.
+
+arr_value = ['Matt', 'Tony', 'Mark'] // DONT USE VAR
+
+function StartArray(array) {
+	for(i=0;i<array.length;i++){
+		// console.log(array[i])
+		$('.AppendedArray').append("<li class='initialArray'>" + array[i] + "</li>")
+	}
+}
+StartArray(arr_value)
+
+function appendArray(AddInput){
+	console.log(arr_value)
+	console.log(AddInput)
+	x = arr_value.push('AddInput')
+	console.log()
+}
+
+$('.appArr').click(function(){
+	appendArray($('.AppArray').val())
+})
+
+
+
+
+</script>

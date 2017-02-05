@@ -1,0 +1,117 @@
+<script>
+// Return a user's age from the hash if there is a match
+
+// function findPersonName(string, array){
+//   // console.log(string)
+//   // console.log(array)
+//   for(i=0;i<array.length;i++){
+//     // console.log(array[i]['age'])
+//     if(array[i]['name'] == string){
+//       return (array[i])
+//     }
+//   }
+// }
+//
+// people = [
+//   { name: "Tony", age: 15},
+//   { name: "Mark", age: 25},
+//   { name: "Wendle", age: 44},
+//   { name: "Duffman", age: 7}
+// ]
+//
+// x = findPersonName('Duffman', people)
+// console.log(x)
+// console.log('-----')
+// x = findPersonName('weoiaoieghwio', people)
+// console.log(x)
+// console.log('-----')
+// x = findPersonName('Tony', people)
+// console.log(x)
+// console.log('-----')
+
+//======================================
+// Return an array in the opposite order.
+
+// function reverseIt(array){
+//   var newArray = []
+//   // console.log(numbers)
+//   for (i = array.length -1; i >=0 ; i--) {
+//     newArray.push(array[i])
+//   }
+//   return newArray
+// }
+// numbers = [1,2,3,4,5,6,7,8,9]
+// results = reverseIt(numbers)
+// console.log('-------------output------------')
+// console.log(results)
+
+//=======================================
+
+// Go through the hash and based off the age change their status.
+// If they are over 30, they are invalid.
+//
+// function validateAges(array){
+//   // console.log(array[0]['age'])
+//   var output = []
+//   for(i=0;i<array.length;i++){
+//     // console.log(array[i])
+//     if(array[i]['age'] > 30){
+//       // console.log('overage')
+//       array[i]['status'] = 'invalid'
+//     }
+//     output.push(array[i])
+//   }
+//   return output
+// }
+//
+// var people = [
+//   { name: "matt", age: 28, status: "valid" },
+//   { name: "mr burns", age: 80, status: "valid" },
+//   { name: "homer", age: 35, status: "valid" }
+// ]
+//
+// results = validateAges(people)
+// console.log('-----------final output----------------')
+// console.log(results)
+
+// results should be : people = [
+//   { name: "matt", age: 28, status: "valid" },
+//   { name: "mr burns", age: 80, status: "invalid" },
+//   { name: "homer", age: 35, status: "invalid" }
+// ]
+
+
+
+// ------------------------------------------------------------
+// Make me a function that will replace bad words, in an array of
+// strings but if the REALLY bad words are found, it removes the string.
+// Replace the bad words with '****'
+
+
+function removeBadWords(bad, very_bad, sentances){
+  var filteredSentances = removeSentances(sentances, very_bad)
+  return bleepBadWords(filteredSentances, bad)
+}
+
+var bad_parent = ['meow', 'ruff', 'moo']
+var very_bad_parent = ['cheeseburger', 'banana']
+var sentances_parent = [
+  'There was a cat that liked to meow',
+  'That cat would meow and ruff',
+  'She was a terrible cheeseburger',
+  'Every was better in the future',
+  'Totally banana'
+]
+
+result = removeBadWords(bad_parent, very_bad_parent, sentances_parent)
+console.log("-------- Final result ---------")
+console.log(result)
+// Result should be
+// [
+//   'There was a cat that liked to ****',
+//   'That cat would **** and ****',
+//   'Every was better in the future',
+// ]
+
+
+</script>

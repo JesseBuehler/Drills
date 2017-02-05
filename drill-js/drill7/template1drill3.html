@@ -1,0 +1,104 @@
+<script>
+
+//-----------------------------------------
+//-----------------------------------------
+
+//Return new arry of all items under 10
+
+// function itemsUnder10(array){
+//   // console.log(array)
+//   var newArr = []
+//   for(i=0;i<array.length;i++){
+//     // console.log(array[i])
+//     if(array[i] < 10)
+//     // console.log('les than')
+//     newArr.push(array[i])
+//   }
+//   return newArr
+// }
+//
+// var result = itemsUnder10([33, 10, 4, 7])
+// console.log(result)
+//
+// console.log('-------------')
+//
+// var result2 = itemsUnder10([2,55,1, 78])
+// console.log(result2)
+
+//-----------------------------------------
+//-----------------------------------------
+
+// Return true if there is a match. False if not.
+
+// function isThereAMatch(array, string){
+//   // console.log(array)
+//   console.log('Is there a match to')
+//   console.log("this " + string)
+//   for(i=0; i<array.length; i++){
+//     console.log(array[i])
+//     if(array[i] == string){
+//       return true;
+//     }
+//   }
+//   return false
+// }
+//
+// x = isThereAMatch(['dog', 'cow', 'pet'], '2323')
+// console.log(x)
+// x = isThereAMatch(["123", "44", "25"], "25")
+// console.log(x)
+
+//-----------------------------------------
+//-----------------------------------------
+//Count all matches in the array. If the item appears 5 times it should return 5...
+
+// function countMatches(array, string){
+//   var count = 0
+//   console.log(array)
+//   console.log(string)
+//   for(i=0;i<array.length;i++){
+//     if(array[i] == string){
+//       count = count + 1
+//     }
+//   }
+//   return count
+// }
+//
+// console.log(countMatches(['dog', 'cow', 'dog', 'dog',	 'pet'], 'dog'))
+// console.log('-----------')
+// console.log(countMatches(['dog', 'cow', 'dog', 'dog',	 'pet'], 'cow'))
+
+//-----------------------------------------
+//-----------------------------------------
+// Return a user's age from the hash if there is a match
+
+function findPersonName(string, array){
+  // console.log(string)
+  // console.log(array)
+  for(i=0;i<array.length;i++){
+    if(array[i]['name'] == string){
+      // console.log('match')
+      return array[i]['age']
+    }
+  }
+  return false
+}
+
+people = [
+  { name: "Tony", age: 15},
+  { name: "Mark", age: 25},
+  { name: "Wendle", age: 44},
+  { name: "Duffman", age: 7}
+]
+
+x = findPersonName('Duffman', people)
+console.log(x)
+console.log('-----')
+x = findPersonName('weoiaoieghwio', people)
+console.log(x)
+console.log('-----')
+x = findPersonName('Tony', people)
+console.log(x)
+console.log('-----')
+
+</script>

@@ -1,0 +1,112 @@
+  <script>
+
+  //-------------------------------------
+  // Take items in the array and add an item to the top.
+  //
+
+  // function addToTop(array, string){
+  //   console.log(array)
+  //   console.log(string)
+  //   var newArray = [string]
+  //   for(i=0;i<array.length;i++){
+  //     console.log(array[i])
+  //     newArray.push(array[i])
+  //   }
+  //   return newArray
+  // }
+  //
+  // x = addToTop(['banana', 'cat', 'kangaroo'], "awesome")
+  // console.log(x) // ['awesome', 'banana', 'cat', 'kangaroo']
+  // x = addToTop([2,3,4], 1) // [1,2,3,4]
+  // console.log(x)
+
+  // ------------------------------------
+  // Return the position of where an item is found in an array
+  // REturns -1 if not found
+
+  // function findInArray(array, key){
+  //   for(i=0;i<array.length;i++){
+  //     if(array[i] == key){
+  //       return i
+  //     }
+  //   }
+  //   return -1
+  // }
+  //
+  // //
+  // x = findInArray(['dog', 'cat', 'monkey'], 'cat')
+  // console.log(x) // returns 1
+  // x = findInArray(['dog', 'cat', 'monkey'], 'rooster')
+  // console.log(x) // returns -1
+
+  // ------------------------------------
+  // Return all the items in the array between the first param and the last param
+
+
+
+function findBetween(array, first, second){
+  var newArray = []
+    firstFound = false
+    secondFound = false
+    for(i=0;i<array.length;i++){
+      // console.log(array[i])
+
+      if(array[i] == second){
+        // console.log('----second found')
+        secondFound = true
+      }
+      if(firstFound == true && secondFound != true){
+        newArray.push(array[i])
+      }
+
+      if(array[i] == first){
+        // console.log('----first found')
+        firstFound = true
+      }
+    }
+    return newArray
+}
+
+
+  x = findBetween(['dog', 'cat', 'monster', 'cheese'], 'cat', 'cheese')
+  console.log(x) // returns ['monster']
+  x = findBetween([1,2,3,4,5, "chair", 6,7], 2, 6) // returns [3, 4, 5, 'chair']
+  console.log(x)
+
+  //-------------------------------------
+  // Write a function that takes 2 arrays and removes
+  // all entries in the second array from the first.
+
+  // function removeArrays(srcArray, badWords){
+  //   var newArray = []
+  //   for(i=0;i<srcArray.length;i++){
+  //     console.log('check: ' + srcArray[i])
+  //     mustRemove = false
+  //
+  //     for(j=0;j<badWords.length;j++){
+  //       console.log("  " + srcArray[i] + " == " + badWords[j])
+  //       if(srcArray[i] == badWords[j]){
+  //         console.log('     ---- MUST REMOVE ----')
+  //         mustRemove = true
+  //       }
+  //     }
+  //
+  //     if(mustRemove == false) {
+  //       newArray.push(srcArray[i])
+  //     }
+  //   }
+  //   return newArray
+  // }
+  //
+  // x = removeArrays(['meow', 'dog', 'cat', 'banana'], ['cat', 'dog'])
+  // console.log(x) // returns ['meow','banana']
+  // x = removeArrays(['meow', 'dog', 'cat', 'banana'], ['cat', 'dog', 'meow'])
+  // console.log(x)// returns['banana']
+
+
+
+
+
+
+
+</script>

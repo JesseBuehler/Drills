@@ -1,0 +1,42 @@
+<script>
+
+
+// function Flagtest(array, trigger){
+//   var outputArray = []
+//   found = false
+//   for(i=0;i<array.length;i++){
+//     if(found == true){
+//       outputArray.push(array[i])
+//     }
+//     if(array[i] == trigger){
+//       found = true
+//     }
+//   }
+//   return outputArray
+// }
+//
+//
+// x = Flagtest(['file', 'stack', 'cloud', 'server', 'books'], 'cloud')
+// console.log(x)
+
+// -------------------------------------------------
+  // take a string and return ONLY the words after "name: but before last_name:"
+  // functions you'll need indexOf() and substring()
+
+function getFirstName(string){
+  start = string.search(': ')
+  string1 = string.substring(start + 2, string.length)
+  end = string.search('last_name')
+  string2 = string.substring(start + 1, end).trim()
+  return string2
+}
+
+
+  x = getFirstName("Toms first name: John last_name: Markson")
+  console.log('First name pulled from String: ' + x)
+  // "John"
+  x = getFirstName("Toms first name: JohnBananaFace last_name: MrBananaHead asdfasdfasdfasdf")
+  console.log('First name pulled from String: ' + x)
+  // JohnBananaFace
+
+</script>

@@ -1,0 +1,93 @@
+<style>
+
+	body {
+		font-family: Georgia;
+	}
+
+	.row {
+		clear: both;
+	}
+
+	.container {
+		margin:auto;
+		width: 800px;
+	}
+
+input {
+	font-size: 20px;
+	padding: 20px;
+	background: #f2f2f2;
+}
+
+.submit {
+	padding: 10px;
+	background-color: #DCAAAA;
+	width: 100px;
+	color: white;
+	display: inline;
+	border-radius: 8px;
+	margin-left: 24px;
+}
+
+table tr td {
+  padding: 10px
+}
+
+table {
+  margin-top: 30px
+}
+
+</style>
+
+<body>
+
+  <div class='container'>
+    <div class='row'>
+      <h3>Name Search</h3>
+      <input class='name' type='text' placeholder="name">
+      <div class ='submit greeting'>Submit</div>
+  </div>
+
+  <table class='myTable'>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Job Title</th>
+    </tr>
+  </div>
+
+</body>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<script>
+  var data = [
+    {name: "Tony", age: 40, job_title: "Bananaface"},
+    {name: "Matt", age: 10, job_title: "Yankees Manager"},
+    {name: "Adelson", age: 20, job_title: "developer"},
+    {name: "Mark", age: 44, job_title: "developer"}
+  ]
+
+  function drawTable(search_term) {
+    $('.myTable').html('')
+    for(i = 0; i < data.length; i++) {
+      name = data[i]['name']
+      age = data[i]['age']
+      job_title = data[i]['job_title']
+
+
+      console.log(name.search(search_term))
+      if(name.search(search_term) > -1 || search_term == undefined || search_term == ''){
+        row = '<tr><td>' + name + '</td><td>' + age + '</td><td>' + job_title + '</td><tr>'
+        $('.myTable').append(row)
+      }
+    }
+  }
+
+  drawTable()
+
+	$('.submit').click(function() {
+	  drawTable($('.name').val())
+	})
+
+  </script>
